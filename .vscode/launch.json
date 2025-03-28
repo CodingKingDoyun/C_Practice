@@ -2,23 +2,21 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "C/C++ Runner: Debug Session",
-      "type": "cppdbg",
+      "type": "cppvsdbg",
       "request": "launch",
+      "name": "Launch Program",
+      "program": "${workspaceFolder}/main/output/${fileBasenameNoExtension}.exe",
       "args": [],
-      "stopAtEntry": false,
-      "externalConsole": true,
-      "cwd": "c:/Users/CKIRUser/Desktop/C_Practice/main",
-      "program": "c:/Users/CKIRUser/Desktop/C_Practice/main/build/Debug/outDebug",
-      "MIMode": "gdb",
-      "miDebuggerPath": "gdb",
-      "setupCommands": [
-        {
-          "description": "Enable pretty-printing for gdb",
-          "text": "-enable-pretty-printing",
-          "ignoreFailures": true
-        }
-      ]
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}/main",
+      "preLaunchTask": "C/C++: gcc.exe 활성 파일 빌드"
+    }
+  ],
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "executableName",
+      "description": "Enter the name of the executable to debug (e.g., acmicpc_12865)"
     }
   ]
 }
