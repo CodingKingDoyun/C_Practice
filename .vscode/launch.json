@@ -1,22 +1,26 @@
+//launch.json
 {
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "cppvsdbg",
+      "name": "C/C++: g++.exe build and debug active file",
+      "type": "cppdbg",
       "request": "launch",
-      "name": "Launch Program",
       "program": "${workspaceFolder}/main/output/${fileBasenameNoExtension}.exe",
       "args": [],
-      "stopAtEntry": true,
-      "cwd": "${workspaceFolder}/main",
-      "preLaunchTask": "C/C++: gcc.exe 활성 파일 빌드"
-    }
-  ],
-  "inputs": [
-    {
-      "type": "promptString",
-      "id": "executableName",
-      "description": "Enter the name of the executable to debug (e.g., acmicpc_12865)"
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb.exe",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
     }
   ]
 }
