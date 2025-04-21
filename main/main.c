@@ -1,39 +1,14 @@
 #include <stdio.h>
-
-int main() {
-  int test;
-  scanf("%d", &test);
-  for (int i = 0; i < test; i++) {
-    int wNum, eNum, wArr[31] = {0}, eArr[31] = {0};
-    scanf("%d %d", &wNum, &eNum);
-    for (int j = wNum; j > 0; j--) {
-      int temp = j + eNum--;
-      printf("%d", temp);
+int main(void) {
+  int k, n, m, dam;
+  scanf("%d", &k);
+  for (int z = 0; z < k; z++) {
+    dam = 1;
+    scanf("%d %d", &n, &m);
+    for (int i = 0; i < n; i++) {
+      dam *= m - i;
+      dam /= 1 + i;
     }
+    printf("%d\n", dam);
   }
-  return 0;
 }
-/*
-2 1
-5 4 3 2 1
-
-7 6 5 4, 5 4 3 2
-
-
-3 2 1
-5 4 3 2 1
-
-8 7 6, 6 5 4, 4 3 2
-
-
-4 3 2 1
-5 4 3 2 1
-
-9 8, 7 6, 5 4, 3 2
-
-4 3 2 1
-6 5 4 3 2 1
-
-10 9 8, 8 7 6, 6 5 4, 4 3 2
-2차원 배열 사용해보기
-*/
